@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/apps/monodemo-phone",
+    "types": []
+  },
+  "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
+  "include": [
+    "**/*.ts",
+    "../../libs/list-page/src/lib/list-page.module.ts",
+    "../../libs/details-page/src/lib/details-page.module.ts"
+  ]
+}

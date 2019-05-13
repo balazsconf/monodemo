@@ -1,0 +1,14 @@
+<monodemo-list-item-shared  [launch]="launch"
+                            class="card" [class.animate]="animate" [style.left.px]="left"
+                            (click)="menuOpen ? menuOpen = false : clicked.emit(launch)"
+                            (panstart)="onPanStart($event)"
+                            (panmove)="onPanMove($event)"
+                            (panend)="onPanEnd($event)">
+</monodemo-list-item-shared>
+
+<div class="menu">
+  <button (click)="optionClicked.emit(launch); menuOpen = false">
+    <i class="fas fa-eye-slash"></i> hide
+  </button>
+</div>
+

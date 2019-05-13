@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2016",
+    "module": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom", "esnext.asynciterable"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@monodemo/list-details-page": ["libs/list-details-page/src/index.ts"],
+      "@monodemo/list-page": ["libs/list-page/src/index.ts"],
+      "@monodemo/details-page": ["libs/details-page/src/index.ts"],
+      "@monodemo/list-item": ["libs/list-item/src/index.ts"],
+      "@monodemo/list": ["libs/list/src/index.ts"],
+      "@monodemo/monodemo-ui": ["libs/monodemo-ui/src/index.ts"],
+      "@monodemo/details": ["libs/details/src/index.ts"],
+      "@monodemo/graphql-schema": ["libs/graphql-schema/src/index.ts"],
+      "@monodemo/design-system": ["libs/design-system/src/index.ts"],
+      "@monodemo/desktop-list-item": ["libs/desktop-list-item/src/index.ts"],
+      "@monodemo/touch-list-item": ["libs/touch-list-item/src/index.ts"],
+      "@monodemo/list-item-menu": ["libs/list-item-menu/src/index.ts"],
+      "@monodemo/list-item-touch": ["libs/list-item-touch/src/index.ts"],
+      "@monodemo/list-item-shared": ["libs/list-item-shared/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

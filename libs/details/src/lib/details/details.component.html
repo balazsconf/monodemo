@@ -1,0 +1,52 @@
+<div *ngIf="launch">
+  <h1>{{launch.mission.name}}</h1>
+
+  <section class="mission row">
+    <div class="patch"><div [style.backgroundImage]="'url('+launch.mission.missionPatchLarge+')'">
+      <span *ngIf="!launch.mission.missionPatchLarge">not available</span>
+    </div></div>
+
+    <div class="details">
+      <div class="row">
+        <span data-label="upcoming" *ngIf="launch.upcoming">{{formatBoolean(launch.upcoming)}}</span>
+        <span data-label="site">{{launch.site}}</span>
+        <span data-label="date"><strong>{{getDate(launch.date)}}</strong> {{getTime(launch.date)}}</span>
+        <span data-label="success">{{formatBoolean(launch.success)}}</span>
+      </div>
+
+      <p data-label="description">{{this.launch.mission.details}}</p>
+    </div>
+  </section>
+
+  <div class="row">
+    <section class="rocket">
+      <h2>Rocket</h2>
+      <div class="row">
+        <span data-label="id">{{launch.rocket.id}}</span>
+        <span data-label="type">{{launch.rocket.type}}</span>
+        <span data-label="name">{{launch.rocket.name}}</span>
+        <span data-label="reused">{{formatBoolean(launch.rocket.reused)}}</span>
+        <span data-label="flight #">{{launch.rocket.flight}}</span>
+      </div>
+    </section>
+
+    <section class="payload">
+      <h2>Payload</h2>
+      <div class="row">
+        <span data-label="id">{{launch.rocket.payload.id}}</span>
+        <span data-label="type">{{launch.rocket.payload.payloadType}}</span>
+        <span data-label="manufacturer">{{launch.rocket.payload.manufacturer}}</span>
+        <span data-label="customers">{{launch.rocket.payload.customers}}</span>
+        <span data-label="nationality">{{launch.rocket.payload.nationality}}</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="video">
+    <h2>Video</h2>
+    <iframe width="100%" height="400" [src]="getVideoUrl()" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </section>
+</div>
+
+<div *ngIf="!launch">loading</div>
+

@@ -1,0 +1,39 @@
+type Query {
+  launches: [Launch]!
+  launch(id: ID!): Launch
+}
+
+type Launch {
+  id: ID!
+  site: String
+  date: String
+  success: Boolean
+  upcoming: Boolean
+  mission: Mission
+  rocket: Rocket
+}
+
+type Rocket {
+  id: ID!
+  name: String
+  type: String
+  reused: String
+  flight: String
+  payload: Payload
+}
+
+type Payload {
+  id: ID!
+  customers: String
+  nationality: String
+  manufacturer: String
+  payloadType: String
+}
+
+type Mission {
+  name: String
+  details: String
+  missionPatchSmall: String
+  missionPatchLarge: String
+  video: String
+}

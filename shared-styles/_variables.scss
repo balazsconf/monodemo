@@ -1,0 +1,57 @@
+// colors
+$light-gray: #F5F5F7;
+$gray-light: #D6D5DD;
+$gray: #7C7B7F;
+$green: green;
+$red: red;
+
+// border
+$border-radius: 4px;
+
+// font
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 18px;
+$font-size-xxl: 22px;
+
+// spacing
+$space-sm: 4px;
+$space-md: 8px;
+$space-lg: 16px;
+
+// layout element
+$cardHeight: 69px;
+$mobilHeaderHeight: 56px;
+
+
+// mixins
+@mixin ellipsis(){
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin mobilePageLayout (){
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  .page-header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $mobilHeaderHeight;
+    padding: $space-lg;
+    background-color: $light-gray;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  .page-content {
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: $space-lg;
+  }
+}

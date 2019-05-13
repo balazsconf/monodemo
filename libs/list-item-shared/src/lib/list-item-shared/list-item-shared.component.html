@@ -1,0 +1,11 @@
+<div class="patch" [class.succes]="launch.success"><div [style.backgroundImage]="'url('+launch.mission.missionPatchSmall+')'">
+  <span *ngIf="!launch.mission.missionPatchSmall"><i class="fas fa-rocket"></i></span>
+</div></div>
+
+<div class="text">
+  <h2>{{launch.mission.name}}</h2>
+  <div class="meta">
+    <span>{{launch.site}}</span>
+    <span><strong>{{getDate(launch.date)}}</strong> {{getTime(launch.date)}}</span>
+  </div>
+</div>

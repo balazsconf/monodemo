@@ -1,0 +1,593 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "monodemo": {
+      "root": "apps/monodemo/",
+      "sourceRoot": "apps/monodemo/src",
+      "projectType": "application",
+      "prefix": "monodemo",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/monodemo",
+            "index": "apps/monodemo/src/index.html",
+            "main": "apps/monodemo/src/main.ts",
+            "polyfills": "apps/monodemo/src/polyfills.ts",
+            "tsConfig": "apps/monodemo/tsconfig.app.json",
+            "assets": [
+              "apps/monodemo/src/favicon.ico",
+              "apps/monodemo/src/assets"
+            ],
+            "styles": ["apps/monodemo/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/monodemo/src/environments/environment.ts",
+                  "with": "apps/monodemo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "monodemo:build",
+            "proxyConfig": "apps/monodemo//proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "monodemo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "monodemo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/monodemo/tsconfig.app.json",
+              "apps/monodemo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/monodemo/jest.config.js",
+            "tsConfig": "apps/monodemo/tsconfig.spec.json",
+            "setupFile": "apps/monodemo/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "monodemo-e2e": {
+      "root": "apps/monodemo-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/monodemo-e2e/cypress.json",
+            "tsConfig": "apps/monodemo-e2e/tsconfig.e2e.json",
+            "devServerTarget": "monodemo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "monodemo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/monodemo-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "monodemo-phone": {
+      "root": "apps/monodemo-phone/",
+      "sourceRoot": "apps/monodemo-phone/src",
+      "projectType": "application",
+      "prefix": "monodemo",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/monodemo-phone",
+            "index": "apps/monodemo-phone/src/index.html",
+            "main": "apps/monodemo-phone/src/main.ts",
+            "polyfills": "apps/monodemo-phone/src/polyfills.ts",
+            "tsConfig": "apps/monodemo-phone/tsconfig.app.json",
+            "assets": [
+              "apps/monodemo-phone/src/favicon.ico",
+              "apps/monodemo-phone/src/assets"
+            ],
+            "styles": ["apps/monodemo-phone/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/monodemo-phone/src/environments/environment.ts",
+                  "with": "apps/monodemo-phone/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "monodemo-phone:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "monodemo-phone:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "monodemo-phone:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/monodemo-phone/tsconfig.app.json",
+              "apps/monodemo-phone/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/monodemo-phone/jest.config.js",
+            "tsConfig": "apps/monodemo-phone/tsconfig.spec.json",
+            "setupFile": "apps/monodemo-phone/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "monodemo-phone-e2e": {
+      "root": "apps/monodemo-phone-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/monodemo-phone-e2e/cypress.json",
+            "tsConfig": "apps/monodemo-phone-e2e/tsconfig.e2e.json",
+            "devServerTarget": "monodemo-phone:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "monodemo-phone:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/monodemo-phone-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "list-details-page": {
+      "root": "libs/list-details-page",
+      "sourceRoot": "libs/list-details-page/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/list-details-page/tsconfig.lib.json",
+              "libs/list-details-page/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/list-details-page/jest.config.js",
+            "tsConfig": "libs/list-details-page/tsconfig.spec.json",
+            "setupFile": "libs/list-details-page/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "list-page": {
+      "root": "libs/list-page",
+      "sourceRoot": "libs/list-page/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/list-page/tsconfig.lib.json",
+              "libs/list-page/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/list-page/jest.config.js",
+            "tsConfig": "libs/list-page/tsconfig.spec.json",
+            "setupFile": "libs/list-page/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "details-page": {
+      "root": "libs/details-page",
+      "sourceRoot": "libs/details-page/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/details-page/tsconfig.lib.json",
+              "libs/details-page/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/details-page/jest.config.js",
+            "tsConfig": "libs/details-page/tsconfig.spec.json",
+            "setupFile": "libs/details-page/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "list": {
+      "root": "libs/list",
+      "sourceRoot": "libs/list/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/list/tsconfig.lib.json",
+              "libs/list/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/list/jest.config.js",
+            "tsConfig": "libs/list/tsconfig.spec.json",
+            "setupFile": "libs/list/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "details": {
+      "root": "libs/details",
+      "sourceRoot": "libs/details/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/details/tsconfig.lib.json",
+              "libs/details/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/details/jest.config.js",
+            "tsConfig": "libs/details/tsconfig.spec.json",
+            "setupFile": "libs/details/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "monodemo-server": {
+      "root": "apps/monodemo-server",
+      "sourceRoot": "apps/monodemo-server/src",
+      "projectType": "application",
+      "prefix": "monodemo-server",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/monodemo-server",
+            "main": "apps/monodemo-server/src/main.ts",
+            "tsConfig": "apps/monodemo-server/tsconfig.app.json",
+            "assets": ["apps/monodemo-server/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/monodemo-server/src/environments/environment.ts",
+                  "with": "apps/monodemo-server/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "monodemo-server:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/monodemo-server/tsconfig.app.json",
+              "apps/monodemo-server/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/monodemo-server/jest.config.js",
+            "tsConfig": "apps/monodemo-server/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "graphql-schema": {
+      "root": "libs/graphql-schema",
+      "sourceRoot": "libs/graphql-schema/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/graphql-schema/tsconfig.lib.json",
+              "libs/graphql-schema/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/graphql-schema/jest.config.js",
+            "tsConfig": "libs/graphql-schema/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "list-item-menu": {
+      "root": "libs/list-item-menu",
+      "sourceRoot": "libs/list-item-menu/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/list-item-menu/tsconfig.lib.json",
+              "libs/list-item-menu/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/list-item-menu/jest.config.js",
+            "tsConfig": "libs/list-item-menu/tsconfig.spec.json",
+            "setupFile": "libs/list-item-menu/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "list-item-touch": {
+      "root": "libs/list-item-touch",
+      "sourceRoot": "libs/list-item-touch/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/list-item-touch/tsconfig.lib.json",
+              "libs/list-item-touch/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/list-item-touch/jest.config.js",
+            "tsConfig": "libs/list-item-touch/tsconfig.spec.json",
+            "setupFile": "libs/list-item-touch/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "list-item-shared": {
+      "root": "libs/list-item-shared",
+      "sourceRoot": "libs/list-item-shared/src",
+      "projectType": "library",
+      "prefix": "monodemo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/list-item-shared/tsconfig.lib.json",
+              "libs/list-item-shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/list-item-shared/jest.config.js",
+            "tsConfig": "libs/list-item-shared/tsconfig.spec.json",
+            "setupFile": "libs/list-item-shared/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "style": "scss",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:library": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "monodemo"
+}

@@ -1,0 +1,29 @@
+@import 'shared-styles/variables';
+
+:host {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $light-gray;
+  border-radius: $border-radius;
+  padding: $space-lg;
+  margin-bottom: $space-md;
+
+  .card{
+    flex: 1 1 auto;
+    cursor: pointer;
+  }
+
+  .menu {
+    flex: 0 0 auto;
+    width: $space-md*4;
+    height: $space-md*4;
+    margin: -$space-md;
+    margin-left: $space-md;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+}

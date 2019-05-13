@@ -1,0 +1,54 @@
+{
+  "npmScope": "monodemo",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "monodemo": {
+      "tags": []
+    },
+    "monodemo-e2e": {
+      "tags": []
+    },
+    "monodemo-phone": {
+      "tags": ["phone"]
+    },
+    "monodemo-phone-e2e": {
+      "tags": []
+    },
+    "list-details-page": {
+      "tags": ["desktop"]
+    },
+    "list-page": {
+      "tags": ["phone"]
+    },
+    "details-page": {
+      "tags": ["phone"]
+    },
+    "list": {
+      "tags": ["common"]
+    },
+    "details": {
+      "tags": ["common"]
+    },
+    "monodemo-server": {
+      "tags": ["server"]
+    },
+    "graphql-schema": {
+      "tags": ["server", "client"]
+    },
+    "list-item-menu": {
+      "tags": ["desktop"]
+    },
+    "list-item-touch": {
+      "tags": ["phone"]
+    },
+    "list-item-shared": {
+      "tags": ["shared"]
+    }
+  }
+}

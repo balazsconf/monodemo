@@ -1,0 +1,71 @@
+@import 'shared-styles/variables';
+
+:host{
+  h1{
+    padding-bottom: $space-md;
+    margin-bottom: $space-lg;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  h2{
+    padding-bottom: $space-md;
+    margin-bottom: $space-lg;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  section{
+    padding-bottom: $space-lg;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 (-$space-lg);
+
+    &>* {
+      margin: $space-md $space-lg;
+    }
+  }
+
+  .mission{
+    @media (min-width: 600px) {
+      flex-wrap: nowrap;
+    }
+
+    .patch {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $light-gray;
+      border-radius: $border-radius;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        margin: $space-lg;
+        background-size: cover;
+
+        font-weight: 700;
+        font-size: $font-size-xxl;
+        color: $gray-light;
+      }
+    }
+
+    .details {
+      flex: 1 1 100%;
+    }
+  }
+
+  .rocket{
+    flex: 1 1 auto;
+  }
+
+  .payload{
+    flex: 1 1 auto;
+  }
+}

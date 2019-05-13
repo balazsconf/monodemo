@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  section {
+    padding: 16px;
+    overflow: auto;
+
+    &.list{
+      flex: 1 0 25%;
+      min-width: 350px;
+    }
+
+    &.details{
+      flex: 1 1 75%;
+    }
+  }
+}

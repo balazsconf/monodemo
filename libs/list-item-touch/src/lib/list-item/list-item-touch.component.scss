@@ -1,0 +1,51 @@
+@import 'shared-styles/variables';
+
+$height: 69px;
+
+:host {
+  display: block;
+  position: relative;
+  height: $height;
+  margin-bottom: $space-md;
+
+  .card {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $height;
+    padding: $space-lg;
+    overflow: hidden;
+
+    background-color: $light-gray;
+    border-radius: $border-radius;
+
+    &.animate {
+      transition: left 100ms ease-out;
+    }
+  }
+
+  .menu {
+    height: $height;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $gray;
+    overflow: hidden;
+    border: 1px solid $light-gray;
+    border-radius: $border-radius;
+
+    button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: $height;
+      height: $height;
+
+      font-size: $font-size-lg;
+      color: white;
+      background-color: $red;
+    }
+  }
+}

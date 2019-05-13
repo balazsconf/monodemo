@@ -1,0 +1,52 @@
+@import 'shared-styles/variables';
+
+:host {
+  display: flex;
+  align-items: center;
+
+  .patch {
+    flex: 0 0 auto;
+    margin: -$space-md;
+    margin-right: $space-md;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid $red;
+
+    &.succes{
+      border: 1px solid $green;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $space-md * 4;
+      height: $space-md * 4;
+      margin: $space-md;
+      background-size: cover;
+
+      font-size: $font-size-xxl;
+      color: $gray-light;
+    }
+  }
+
+  .text {
+    flex: 1 1 auto;
+    overflow: hidden;
+
+    h2{
+      @include ellipsis;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      color: $gray;
+      font-size: $font-size-sm;
+
+      span{
+        @include ellipsis;
+      }
+    }
+  }
+}
